@@ -16,25 +16,19 @@
     </div>
   </div>
 </div> -->
-<div class="container">
-  <div class="row">
-    <div class="col-12 text-left p-2">
-      <form>
-        <div class="form-group">
-          <label>
-            Operando A
-          </label>
-          <input type="number" class="form-control" placeholder="Introduce un numero" [(ngModel)]="numberA" name="numberA" />
-        </div>
-        <div class="form-group">
-          <label>
-            Operando B
-          </label>
-          <input type="number" class="form-control" placeholder="Introduce un numero" [(ngModel)]="numberB" name="numberB" />
-        </div>
-        <button type="submit" class="btn btn-primary" (click)="onSumNumber()">Sumar</button>
-      </form>
-      <p class="pt-2">Resultado: {{result}}</p>
-    </div>
+
+<form>
+  <div class="form-group">
+    <label>
+      Operando A
+    </label>
+    <input type="number" class="form-control" placeholder="Introduce un numero" [(ngModel)]="numberA" name="numberA" />
   </div>
-</div>
+  <div class="form-group">
+    <label>
+      Operando B
+    </label>
+    <input type="number" class="form-control" placeholder="Introduce un numero" [(ngModel)]="numberB" name="numberB" />
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="onSumNumber()">Sumar</button>
+</form>

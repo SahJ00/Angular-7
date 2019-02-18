@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-calculadora',
@@ -6,20 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculadora.component.css']
 })
 export class CalculadoraComponent implements OnInit {
-  numberA:number = 0
-  numberB:number = 0
-  result:number;
+
+  @Output() resultadoSuma = new EventEmitter<number>();
+  numberA:number ;
+  numberB:number ;
+  // result:number;
   constructor() { }
 
   ngOnInit() {
   }
-  onNumberA(event: Event) {
-    this.numberA = parseInt((<HTMLInputElement>event.target).value);
-  }
-  onNumberB(event: Event) {
-    this.numberB = parseInt((<HTMLInputElement>event.target).value);
-  }
+  // onNumberA(event: Event) {
+  //   this.numberA = parseInt((<HTMLInputElement>event.target).value);
+  // }
+  // onNumberB(event: Event) {
+  //   this.numberB = parseInt((<HTMLInputElement>event.target).value);
+  // }
   onSumNumber():void {
-    this.result = this.numberA + this.numberB;
+    let resultado = this.numberA + this.numberB;
+    this.resultadoSuma.emit(resultado);
   }
 }
