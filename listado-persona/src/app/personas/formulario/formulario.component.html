@@ -1,0 +1,15 @@
+<div class="box">
+  <form class="item" #f="ngForm" (ngSubmit)='f.form.valid && onGuardarPersona()'>
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="nombreInput" required>
+    <!-- <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" #nombreInput>  -->
+    <input type="text" name="appelido" id="apellido" placeholder="Apellido" [(ngModel)]="apellidoInput" required>
+    <!-- <input type="text" name="appelido" id="apellido" placeholder="Apellido" class="form-control" #apellidoInput> -->
+    <!-- <button type="submit" class="btn btn-primary" (click)="onAgregarPersona(nombreInput, apellidoInput)"> -->
+    <button type="submit" style="cursor: pointer">
+      +
+    </button>
+    <button type="submit" style="cursor: pointer" class="buttonRed" (click)="eliminarPersona()" *ngIf="index != null">
+      -
+    </button>
+  </form>
+</div>

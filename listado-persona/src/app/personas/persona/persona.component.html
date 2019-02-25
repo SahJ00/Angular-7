@@ -1,0 +1,12 @@
+<div class="item">
+  <ul>
+    <li>
+      <a [routerLink]="['/personas',indice]" [queryParams]="{modoEdicion:'1'}">
+        <!-- 1 modo edicion 0 modo agregar -->
+        <p>{{persona.nombre}} {{persona.apellido}}</p>
+      </a>
+    </li>
+  </ul>
+  <!-- <input type="checkbox" class="btn btn-info" (click)="emitirSaludo()"> -->
+
+</div>
