@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from './persona.model';
-import { LoggingService } from './LoggingService.service';
-import { PersonasService } from './personas.service';
+import * as firebase from 'firebase'
+import { LoginService } from './login/login.service';
 
 
 @Component({
@@ -10,7 +9,21 @@ import { PersonasService } from './personas.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  ngOnInit(): void { }
+
+  constructor(private loginService: LoginService) { }
+  ngOnInit(): void {
+    firebase.initializeApp({
+      apiKey: "AIzaSyBduRmVaSGkmVQ7E8o7kAXxjvNc8-csx3o",
+      authDomain: "listado-persona.firebaseapp.com",
+    })
+  }
+
+  isAutenticado() {
+    return this.loginService.isAunteticado();
+  }
+  salir() {
+    this.loginService.logout();
+  }
   // titulo = 'Listado de Personas';
   // // personas: Persona[] = [new Persona("Juan", "Perez"),
   // // new Persona("Pepe", "Lopez")];
